@@ -1,0 +1,7 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\Lenovo\\Desktop\\UNIVR\\AI MASTER\\REINFORCEMENT LEARNING\\Labs\\RL-lab\\venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.languageServer": "Default",
+    "jupyter.defaultKernel": "Python (rl-lab)"
+}

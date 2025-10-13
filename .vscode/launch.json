@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run RL-lab script",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python": "C:\\Users\\Lenovo\\Desktop\\UNIVR\\AI MASTER\\REINFORCEMENT LEARNING\\Labs\\RL-lab\\venv\\Scripts\\python.exe",
+            "justMyCode": true
+        }
+    ]
+}

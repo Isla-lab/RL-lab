@@ -1,0 +1,9 @@
+# RL-lab environment (converted from conda)
+
+numpy
+scipy
+jupyter
+matplotlib
+tqdm
+tensorflow
+keras
