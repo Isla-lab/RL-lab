@@ -1,6 +1,10 @@
-import os, sys, numpy
+from pydoc import render_doc
+import os, sys, numpy, random
 module_path = os.path.abspath(os.path.join('../tools'))
-if module_path not in sys.path: sys.path.append(module_path)
+
+if module_path not in sys.path: sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'tools')))
+
+#if module_path not in sys.path: sys.path.append(module_path)
 from DangerousGridWorld import GridWorld
 
 
@@ -18,12 +22,29 @@ def random_dangerous_grid_world( environment ):
 	#
 	# YOUR CODE HERE!
 	#
-	for step in range(10):
-		#
-		# YOUR CODE HERE!
-		#
-		if False: break # <- Hint: check if the state is terminal
+	env = environment
+	state = env.start_state
+	goal = env.goal_state
+	env.robot_state = state
 	
+	trajectory = []
+	for step in range(10):
+		action = numpy.random.randint(0, env.action_space)
+		next_state = env.sample(action, state)
+		reward = env.R[next_state]
+		trajectory.append([state, action, reward])
+		
+		env.robot_state = next_state
+		state = next_state
+
+		print(f"\nStep {step+1}: action = {env.actions[action]}, reward = {reward}")
+		env.render()
+
+		if env.is_terminal(state):
+			print("\n💀 Episode terminated!")
+			break
+	
+
 	return trajectory
 
 
@@ -64,33 +85,59 @@ class RecyclingRobot():
 		self.r_wait = 0.2
 
 		# Defining the environment variables
-		self.observation_space = None
-		self.action_space = None
-		self.actions = None
-		self.states = None
+		self.observation_space = 2
+		self.action_space = 3
+		self.actions = {0: 'search', 1: 'wait', 2: 'recharge'}
+		self.states = {0: 'high', 1: 'low'}
+		
 
 
 	def reset( self ):
 		#
 		# YOUR CODE HERE!
+		self.state = 0
 		#
 		return self.state
 
 
 	def step( self, action ):
+		
 
 		reward = 0
 		#
 		# YOUR CODE HERE!
+		#
+		act = self.actions[action]
+		print(f'selected action: {act}')
+		if self.state == 0 and act == 'recharge':
+			return self.state, reward, False, None
+		elif self.state == 1 and act == 'recharge':
+			self.state = 0
+			reward += 0
+		if act == 'search':
+			if self.state == 0:
+				new_state = numpy.random.choice(self.observation_space, p=[self.alfa, 1-self.alfa])
+				self.state = new_state
+				reward += self.r_search
+			elif self.state == 1:
+				new_state = numpy.random.choice(self.observation_space, p=[self.beta, 1-self.beta])
+				if new_state == 0:
+					reward += -3
+				elif new_state == 1:
+					reward += self.r_search
+				self.state = new_state
+		if act == 'wait':
+			reward += self.r_wait
+			
 		#
 		return self.state, reward, False, None
 
 
 	def render( self ):
 
-		#
-		# YOUR CODE HERE!
-		#
+	#
+		
+	#
 		return True
 
 
