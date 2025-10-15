@@ -1,5 +1,10 @@
+import os, sys
 import numpy as np; np.random.seed(6)
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+np.random.seed(6)
 
 
 class MultiArmedBandit():
@@ -15,6 +20,19 @@ class MultiArmedBandit():
 		sampling_variance: int
 			variance of the returned reward selecting an action, the mean is q_star[action]
 	
+			
+				The Multi-Armed Testbed
+		environment consists of a set of
+		N possible actions, from 1 to N.
+		A mean value (q∗(a)) has been
+		assigned to each action, sampled
+		from a normal distribution with
+		µ =0 and σ2 =1.
+		For a given action a, the
+		environment should return a
+		reward sampled from a normal
+		distribution with µ = q∗(a) and
+		σ2 =1.	
 	Methods
 	-------
 		action( action )
@@ -26,15 +44,16 @@ class MultiArmedBandit():
 		#
 		# YOUR CODE HERE!
 		#	
-		self.levers = None
-		self.q_star = None
-		self.sampling_variance = None
+		self.levers = levers
+		self.q_star =  np.random.normal(0, 1, self.levers)
+		self.sampling_variance = 1
 			
 	def action( self, action ):
 		#
 		# YOUR CODE HERE!
+		reward = np.random.normal(self.q_star[action], self.sampling_variance)
 		#
-		return None
+		return reward
 
 
 def banditAlgorithm( env, eps=0, maxiters=1000 ):
@@ -55,12 +74,22 @@ def banditAlgorithm( env, eps=0, maxiters=1000 ):
 	Q = np.array([0 for _ in range(levers) ], dtype=float)
 	N = np.array([0 for _ in range(levers) ], dtype=int)
 	ep_reward = []; avg_reward = []
-
+	
 	for _ in range(maxiters):
 		#
 		# YOUR CODE HERE!
-		#
-		ep_reward.append( 0 )
+		act = None
+		if np.random.rand() > eps:
+			act = np.argmax(Q)	
+		else:
+			act = np.random.randint(levers)
+			
+		reward = env.action(act)
+		N[act] += 1
+		Q[act] += (1/N[act])*(reward-Q[act])
+		
+
+		ep_reward.append( reward )
 		avg_reward.append( np.mean(ep_reward) )
 
 	return avg_reward, Q
@@ -117,7 +146,11 @@ def main():
 	ax.grid()
 	plt.ylim([0, None])
 	plt.legend()
-	plt.show()
+	save_path = os.path.join(os.path.dirname(__file__), "lesson2_plot.png")
+	plt.savefig(save_path, dpi=150, bbox_inches="tight")
+	print(f"\n\tPlot saved at {save_path}")
+	
+
 	
 
 if __name__ == "__main__":

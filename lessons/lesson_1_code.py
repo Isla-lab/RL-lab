@@ -108,7 +108,7 @@ class RecyclingRobot():
 		# YOUR CODE HERE!
 		#
 		act = self.actions[action]
-		print(f'selected action: {act}')
+		#print(f'selected action: {act}')
 		if self.state == 0 and act == 'recharge':
 			return self.state, reward, False, None
 		elif self.state == 1 and act == 'recharge':
