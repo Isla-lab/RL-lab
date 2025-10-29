@@ -5,7 +5,7 @@ module_path = os.path.abspath(os.path.join('../tools'))
 if module_path not in sys.path: sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'tools')))
 
 #if module_path not in sys.path: sys.path.append(module_path)
-from DangerousGridWorld import GridWorld
+from tools.DangerousGridWorld import GridWorld
 
 
 def random_dangerous_grid_world( environment ):

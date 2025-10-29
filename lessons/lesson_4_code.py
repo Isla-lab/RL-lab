@@ -1,7 +1,7 @@
 import os, sys, numpy
 module_path = os.path.abspath(os.path.join('../tools'))
 if module_path not in sys.path: sys.path.append(module_path)
-from DangerousGridWorld import GridWorld
+from tools.DangerousGridWorld import GridWorld
 
 
 def epsilon_greedy(q, state, epsilon):

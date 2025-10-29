@@ -3,5 +3,10 @@
     "python.terminal.activateEnvironment": true,
     "python.analysis.autoImportCompletions": true,
     "python.languageServer": "Default",
-    "jupyter.defaultKernel": "Python (rl-lab)"
+    "jupyter.defaultKernel": "Python (rl-lab)",
+    
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.analysis.extraPaths": ["${workspaceFolder}"],
+    "python.testing.cwd": "${workspaceFolder}",
+    "python.terminal.executeInFileDir": false
 }

@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Run RL-lab script",
             "type": "python",
@@ -8,7 +9,12 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "python": "C:\\Users\\Lenovo\\Desktop\\UNIVR\\AI MASTER\\REINFORCEMENT LEARNING\\Labs\\RL-lab\\venv\\Scripts\\python.exe",
+            "cwd": "${workspaceFolder}",                  // <-- ключевая строка: запуск из корня проекта
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"        // <-- делает корень проекта видимым для всех импортов
+            },
             "justMyCode": true
         }
     ]
 }
+

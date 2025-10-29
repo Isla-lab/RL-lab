@@ -1,7 +1,7 @@
 import os, sys
 module_path = os.path.abspath(os.path.join('../tools'))
 if module_path not in sys.path: sys.path.append(module_path)
-from DangerousGridWorld import GridWorld
+from tools.DangerousGridWorld import GridWorld
 
 
 def value_iteration(environment, maxiters=300, discount=0.9, max_error=1e-3):

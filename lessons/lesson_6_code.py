@@ -12,7 +12,7 @@ import torch.optim as optim
 import torch.distributions as distributions
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
-from DangerousGridWorld import GridWorld
+from tools.DangerousGridWorld import GridWorld
 
 
 def set_same_weights(keras_model, pytorch_model):
