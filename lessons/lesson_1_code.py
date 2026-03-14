@@ -23,18 +23,13 @@ class MultiArmedBandit():
 	"""
 
 	def __init__( self, levers ):
-		#
-		# YOUR CODE HERE!
-		#	
-		self.levers = None
-		self.q_star = None
-		self.sampling_variance = None
+		self.levers = levers
+		self.q_star = np.random.normal(loc=0.0, scale=1.0, size=levers)
+		self.sampling_variance = 1
 			
 	def action( self, action ):
-		#
-		# YOUR CODE HERE!
-		#
-		return None
+		reward = np.random.normal(loc=self.q_star[action],scale=self.sampling_variance)
+		return reward
 
 
 def banditAlgorithm( env, eps=0, maxiters=1000 ):
@@ -57,11 +52,17 @@ def banditAlgorithm( env, eps=0, maxiters=1000 ):
 	ep_reward = []; avg_reward = []
 
 	for _ in range(maxiters):
-		#
-		# YOUR CODE HERE!
-		#
-		ep_reward.append( 0 )
+		A = None
+		if np.random.random() < 1 - eps:
+			A = np.argmax(Q)
+		else: 
+			index = np.random.randint(0,len(Q))
+			A = index
+		R = MultiArmedBandit.action(env,A)
+		ep_reward.append(R)
 		avg_reward.append( np.mean(ep_reward) )
+		N[A] += 1 
+		Q[A] += 1/N[A]*(R - Q[A])
 
 	return avg_reward, Q
 
@@ -122,4 +123,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-	
