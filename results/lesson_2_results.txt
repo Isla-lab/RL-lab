@@ -1,0 +1,27 @@
+************************************************
+*  Welcome to the first lesson of the RL-Lab!  *
+*             (MDP and Environments)           *
+************************************************
+
+A) Random Policy on Dangerous Grid World:
+[S] [ ] [ ] [ ] [ ] [ ] [X] 
+[ ] [W] [W] [W] [X] [ ] [X] 
+[ ] [ ] [W] [W] [X] [ ] [X] 
+[W] [ ] [W] [W] [X] [ ] [X] 
+[ ] [ ] [W] [W] [X] [ ] [X] 
+[ ] [W] [W] [W] [X] [ ] [X] 
+[ ] [ ] [ ] [ ] [ ] [ ] [G] 
+
+Random trajectory generated: [(0, 0), (0, 0), (1, 0), (2, 0), (2, 0), (2, 0), (2, 0), (2, 0), (1, 0), (1, 0), (1, 0)]
+
+B) Custom Environment: Recycling Robot
+	From state 'HIGH' selected action 'SEARCH': 	 total reward: 0.5
+	From state 'LOW' selected action 'SEARCH': 	 total reward: 1.0
+	From state 'HIGH' selected action 'RECHARGE': 	 total reward: 1.0
+	From state 'HIGH' selected action 'WAIT': 	 total reward: 1.2
+	From state 'HIGH' selected action 'WAIT': 	 total reward: 1.4
+	From state 'HIGH' selected action 'RECHARGE': 	 total reward: 1.4
+	From state 'HIGH' selected action 'SEARCH': 	 total reward: 1.9
+	From state 'HIGH' selected action 'WAIT': 	 total reward: 2.1
+	From state 'HIGH' selected action 'WAIT': 	 total reward: 2.3
+	From state 'HIGH' selected action 'WAIT': 	 total reward: 2.5
