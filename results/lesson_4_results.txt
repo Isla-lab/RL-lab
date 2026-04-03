@@ -1,0 +1,35 @@
+*************************************************
+*  Welcome to the fourth lesson of the RL-Lab!  *
+*        (Temporal Difference Methods)          *
+**************************************************
+
+Environment Render:
+[S] [ ] [ ] [ ] [ ] [ ] [X] 
+[ ] [W] [W] [W] [X] [ ] [X] 
+[ ] [ ] [W] [W] [X] [ ] [X] 
+[W] [ ] [W] [W] [X] [ ] [X] 
+[ ] [ ] [W] [W] [X] [ ] [X] 
+[ ] [W] [W] [W] [X] [ ] [X] 
+[ ] [ ] [ ] [ ] [ ] [ ] [G] 
+
+4) Q-Learning
+ D   L   R   R   R   D  [X] 
+ D  [W] [W] [W] [X]  D  [X] 
+ R   D  [W] [W] [X]  D  [X] 
+[W]  D  [W] [W] [X]  D  [X] 
+ D   L  [W] [W] [X]  D  [X] 
+ D  [W] [W] [W] [X]  D  [X] 
+ R   R   R   R   R   R  [G] 
+	Expected reward training with Q-Learning: 2.24
+	Average steps training with Q-Learning: 12.31
+
+5) SARSA
+ D   L   L   R   R   D  [X] 
+ D  [W] [W] [W] [X]  D  [X] 
+ R   D  [W] [W] [X]  D  [X] 
+[W]  D  [W] [W] [X]  D  [X] 
+ D   L  [W] [W] [X]  D  [X] 
+ D  [W] [W] [W] [X]  D  [X] 
+ R   R   R   R   R   R  [G] 
+	Expected reward training with SARSA: 2.67
+	Average steps training with SARSA: 11.72
