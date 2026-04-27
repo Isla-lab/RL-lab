@@ -86,9 +86,7 @@ Following the link to the code snippets for the lessons:
 This repo includes a set of introductory tutorials to help accomplish the exercises. In detail, we provide the following Jupyter notebook that contains the basic instructions for the lab:
 - **Tutorial 1 - Gym Environment:** [Here!](tutorials/tutorial_environment.ipynb)
 - **Tutorial 2 - TensorFlow (Keras):** [Here!](tutorials/tutorial_tensorflow.ipynb)
-<!---	
 - **Tutorial 3 - PyTorch:** [Here!](tutorials/tutorial_pytorch.ipynb)
---->
 
 ## Contact information
 *  Teaching assistant: **Riccardo Fidanza** - riccardo.fidanza@studenti.univr.it 
