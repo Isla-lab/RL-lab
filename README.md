@@ -64,7 +64,7 @@ We recommend using **Python 3.10** or **Python 3.11**.
 
 ## Setup Instructions
 
-Please create a virtual environment to isolate the project dependencies. Ensure you use the provided `requirements.txt` file.
+Please create a virtual environment to isolate the project dependencies. Ensure you use the provided `requirements.txt` file (see the [tools](tools) folder).
 
 ### Windows
 
