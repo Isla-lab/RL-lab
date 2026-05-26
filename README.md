@@ -3,7 +3,7 @@
 Code for the Reinforcement Learning lab of *Reinforcement Learning and Advanced programming for AI* course, MSc degree in Artificial Intelligence 2023/2024 at the University of Verona.
 
 ## First Set-Up (Conda)
-1. Download [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for your System. 
+1. Download [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for your System.
 
 2.  Install Miniconda
 	- On Linux/Mac 
@@ -35,6 +35,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 7: Deep Q-Network [Slides](slides/slides_lesson_7.pdf), [Code](lessons/lesson_7_code.py), [Results](results/lesson_7_results.txt)
 - [x] Lesson 8: REINFORCE [Slides](slides/slides_lesson_8.pdf), [Code](lessons/lesson_8_code.py), [Results](results/lesson_8_result.png)
 - [x] Lesson 9: A2C [Slides](slides/slides_lesson_9.pdf), [Code](lessons/lesson_9_code.py), [Results](results/lesson_9_result.png)
+- [x] Lesson 10: PPO See "Lesson 10: PPO CleanRL Laboratory" below 
 
 - [x] Lesson Extra: Value/Policy Iteration [Slides](slides/slides_lesson_extra.pdf), [Code](lessons/lesson_extra_code.py), [Results](results/lesson_extra_results.txt)
 
@@ -46,7 +47,7 @@ This repo includes a set of introductory tutorials to help accomplish the exerci
 
 
 
-# PPO CleanRL Laboratory
+# Lesson 10: PPO CleanRL Laboratory
 
 This repository contains a Proximal Policy Optimization (PPO) laboratory based on the [CleanRL](https://github.com/vwxyzjn/cleanrl) framework. The code automatically adapts to both discrete and continuous action spaces using `gymnasium`.
 
