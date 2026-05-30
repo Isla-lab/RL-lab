@@ -2,7 +2,7 @@
 
 This repository contains a Proximal Policy Optimization (PPO) laboratory based on the [CleanRL](https://github.com/vwxyzjn/cleanrl) framework. The code automatically adapts to both discrete and continuous action spaces using `gymnasium`.
 
-The [lessons](lessons) folder includes:
+This folder includes:
 - `lesson10_cleanRL_ppo_train_code.py`: The template file with `# TODO` sections.
 <!---	 - `ppo_cleanRL_solution.py`: The complete working solution. --->
 - `lesson10_cleanRL_test.py`: A script to load and render the trained policy.
@@ -15,7 +15,7 @@ We recommend using **Python 3.10** or **Python 3.11**.
 
 ## Setup Instructions
 
-Please create a virtual environment to isolate the project dependencies. Ensure you use the provided `requirements.txt` file (see the [tools](tools) folder).
+Please create a virtual environment to isolate the project dependencies. Ensure you use the provided `requirements.txt` file in this folder.
 
 ### Windows
 
