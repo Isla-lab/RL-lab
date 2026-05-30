@@ -22,7 +22,7 @@ def loss_q_fn(data, ac, ac_targ, gamma):
     actor, qf1 = ac
     target_actor, qf1_target = ac_targ
 
-    pass
+    pass  # TODO
     
     return 0 # Replace with qf1_loss
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup Environments list
-ENVS=("MountainCarContinuous-v0")
+ENVS=("Pendulum-v1")
 
 # OTHER ENVIRONMENTS: "Pendulum-v1" "MountainCarContinuous-v0" "BipedalWalker-v3"
 
@@ -11,7 +11,7 @@ for ENV in "${ENVS[@]}"; do
     echo "=============================================="
     echo "Training on $ENV"
     echo "=============================================="
-    python lesson11_cleanRL_ddpg_cleanRL_solution.py --env-id $ENV --total-timesteps 50000
+    python lesson11_cleanRL_ddpg_train_code.py --env-id $ENV --total-timesteps 50000
 done
 
 echo "All environments trained via CleanRL Solution script!"
