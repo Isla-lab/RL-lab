@@ -11,57 +11,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
-
-# DDPG FUNCTIONS TO COMPLETE
-
-def loss_q_fn(data, ac, ac_targ, gamma):
-    """
-    Calculate the Q-Network loss using the Bellman equation.
-    """
-    b_obs, b_actions, b_rewards, b_next_obs, b_dones = data
-    actor, qf1 = ac
-    target_actor, qf1_target = ac_targ
-
-    pass  # TODO
-    
-    return 0 # Replace with qf1_loss
-
-def loss_pi_fn(data, ac):
-    """
-    Calculate the Actor loss (Deterministic Policy Gradient).
-    """
-    b_obs, _, _, _, _ = data
-    actor, qf1 = ac
-
-    # TODO
-    
-    return 0 # Replace with actor_loss
-
-def update_rule(data, q_optimizer, pi_optimizer, ac, ac_targ, gamma, polyak):
-    """
-    Perform optimization steps and Polyak averaging for target networks.
-    """
-    actor, qf1 = ac
-    target_actor, qf1_target = ac_targ
-
-    # --- Update Q-Network ---
-    # TODO: Calculate Q loss, zero out q_optimizer gradients, perform backward pass and step
-    qf1_loss = loss_q_fn(data, ac, ac_targ, gamma)
-    
-    # --- Update Policy ---
-    # TODO: Calculate policy loss, zero out pi_optimizer gradients, perform backward pass and step
-    actor_loss = loss_pi_fn(data, ac)
-    
-    # --- Update Target Networks ---
-    with torch.no_grad():
-        # TODO
-        pass
-
-    return qf1_loss.item() if isinstance(qf1_loss, torch.Tensor) else 0, \
-           actor_loss.item() if isinstance(actor_loss, torch.Tensor) else 0
-
-
+# =====================================================================
 # ENVIRONMENT AND NETWORK STRUCTURE
+# =====================================================================
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -144,6 +96,7 @@ class Actor(nn.Module):
         x = torch.tanh(self.fc_mu(x))
         return x * self.action_scale + self.action_bias
 
+
 if __name__ == "__main__":
     args = parse_args()
     
@@ -214,23 +167,36 @@ if __name__ == "__main__":
         obs = next_obs
 
         if global_step > args.learning_starts:
-            data = rb.sample(args.batch_size)
-            ac = (actor, qf1)
-            ac_targ = (target_actor, qf1_target)
+            b_obs, b_actions, b_rewards, b_next_obs, b_dones = rb.sample(args.batch_size)
 
-            q_loss, pi_loss = update_rule(
-                data=data,
-                q_optimizer=q_optimizer,
-                pi_optimizer=pi_optimizer,
-                ac=ac,
-                ac_targ=ac_targ,
-                gamma=args.gamma,
-                polyak=args.tau
-            )
+            # =====================================================================
+            # 1. UPDATE Q-NETWORK (CRITIC) - TODO
+            # =====================================================================
+            # TODO: Calculate the Q-Network loss using the Bellman equation.
+            # TODO: Zero the gradients (q_optimizer.zero_grad()), perform the backward pass, and step.
+            
+            qf1_loss = torch.tensor(0.0) # Placeholder: replace with the real loss
+            
+
+            # =====================================================================
+            # 2. UPDATE POLICY (ACTOR) - TODO
+            # =====================================================================
+            # TODO: Calculate the Actor loss (Deterministic Policy Gradient).
+            # TODO: Zero the gradients (pi_optimizer.zero_grad()), perform the backward pass, and step.
+            
+            actor_loss = torch.tensor(0.0) # Placeholder: replace with the real loss
+            
+
+            # =====================================================================
+            # 3. UPDATE TARGET NETWORKS (POLYAK AVERAGING) - TODO
+            # =====================================================================
+            with torch.no_grad():
+                # TODO: Implement Polyak averaging for target_actor and qf1_target.
+                pass
 
             if global_step % 5000 == 0:
                 sps = int(global_step / (time.time() - start_time))
-                print(f"[Metrics] Step: {global_step}/{args.total_timesteps} | Q-Loss: {q_loss:.4f} | Pi-Loss: {pi_loss:.4f} | SPS: {sps}")
+                print(f"[Metrics] Step: {global_step}/{args.total_timesteps} | Q-Loss: {qf1_loss.item():.4f} | Pi-Loss: {actor_loss.item():.4f} | SPS: {sps}")
 
     envs.close()
     
