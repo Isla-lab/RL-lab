@@ -35,7 +35,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 7: Deep Q-Network [Slides](slides/slides_lesson_7.pdf), [Code](lessons/lesson_7_code.py), [Results](results/lesson_7_results.txt)
 - [x] Lesson 8: REINFORCE [Slides](slides/slides_lesson_8.pdf), [Code](lessons/lesson_8_code.py), [Results](results/lesson_8_result.png)
 - [x] Lesson 9: A2C [Slides](slides/slides_lesson_9.pdf), [Code](lessons/lesson_9_code.py), [Results](results/lesson_9_result.png)
-- [x] Lesson 10: PPO [Slides](slides/slides_lesson_10.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson10_readme.md)
+- [x] Lesson 10: PPO [Slides](slides/slides_lesson_10.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson10)
 
 - [x] Lesson Extra: Value/Policy Iteration [Slides](slides/slides_lesson_extra.pdf), [Code](lessons/lesson_extra_code.py), [Results](results/lesson_extra_results.txt)
 
