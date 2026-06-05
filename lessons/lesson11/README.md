@@ -56,19 +56,19 @@ You can train the agents on multiple environments defined in the repository scri
 ### Windows
 Run the batch script:
 ```powershell
-.\run_train.bat
+.\lesson11_cleanRL_run_train.bat
 ```
 
 ### Unix / Linux / macOS
 Make the script executable and run it:
 ```bash
-chmod +x run_train.sh
-./run_train.sh
+chmod +x lesson11_cleanRL_run_train.sh
+./lesson11_cleanRL_run_train.sh
 ```
 
 *(Optional) You can also run the training manually for a single environment:*
 ```bash
-python ddpg_cleanRL_solution.py --env-id Pendulum-v1 --total-timesteps 50000
+python lesson11_cleanRL_ddpg_train_code.py --env-id Pendulum-v1 --total-timesteps 50000
 ```
 
 **Note**: DDPG only works on environments with **continuous** action spaces (e.g., `Pendulum-v1`, `MountainCarContinuous-v0`, `BipedalWalker-v3`). It will fail if run on discrete environments like `CartPole-v1`.

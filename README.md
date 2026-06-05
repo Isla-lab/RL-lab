@@ -1,6 +1,6 @@
 # RL-Laboratory🤖
 
-Code for the Reinforcement Learning lab of *Reinforcement Learning and Advanced programming for AI* course, MSc degree in Artificial Intelligence 2023/2024 at the University of Verona.
+Code for the Reinforcement Learning lab of *Reinforcement Learning* course, MSc degree in Artificial Intelligence 2025/2026 at the University of Verona.
 
 ## First Set-Up (Conda)
 1. Download [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for your System.
@@ -37,7 +37,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 9: A2C [Slides](slides/slides_lesson_9.pdf), [Code](lessons/lesson_9_code.py), [Results](results/lesson_9_result.png)
 - [x] Lesson 10: PPO [Slides](slides/slides_lesson_10.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson10)
 - [x] Lesson 11: DDPG [Slides](slides/slides_lesson_11.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson11)
-<!-- - [x] Lesson 12: SAC [Slides](slides/slides_lesson_12.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson12) -->
+- [x] Lesson 12: SAC [Slides](slides/slides_lesson_12.pdf), [Code](lessons), [Setup and full instructions](lessons/lesson12)
 
 - [x] Lesson Extra: Value/Policy Iteration [Slides](slides/slides_lesson_extra.pdf), [Code](lessons/lesson_extra_code.py), [Results](results/lesson_extra_results.txt)
 
